@@ -264,10 +264,8 @@ Program will exit if all retries failed!
 Check out the documentations for the different sources
 * [vmware](https://github.com/bb-Ricardo/netbox-sync/blob/main/docs/source_vmware.md)
 * [check_redfish](https://github.com/bb-Ricardo/netbox-sync/blob/main/docs/source_check_redfish.md)
-<<<<<<< HEAD
 * Dell ECS (custom implementation using NetBox Custom Objects plugin)
 =======
->>>>>>> cd90f89f571da0de99fe6f23bf81f271dc77fd6b
 
 If you have multiple vCenter instances or check_redfish folders just add another source with the same type
 in the **same** file.
@@ -300,7 +298,6 @@ username = ecs-admin
 password = super-secret
 validate_tls_certs = False
 =======
->>>>>>> cd90f89f571da0de99fe6f23bf81f271dc77fd6b
 ```
 
 If different sources overwrite the same attribute for ex. a host then the order of the sources should be considered.
