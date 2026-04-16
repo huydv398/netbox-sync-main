@@ -5,12 +5,32 @@ A tool to synchronize inventory data from external sources into a NetBox instanc
 ## Supported sources
 
 * VMware vCenter Server
-* [bb-Ricardo/check_redfish](https://github.com/bb-Ricardo/check_redfish) inventory files
+* [bb-ricardo/check_redfish](https://github.com/bb-Ricardo/check_redfish) inventory files
+<<<<<<<<< Temporary merge branch 1
+=========
 * Dell ECS (using NetBox Custom Objects plugin)
+>>>>>>>>> Temporary merge branch 2
 
-## Overview
+**IMPORTANT: READ INSTRUCTIONS CAREFULLY BEFORE RUNNING THIS PROGRAM**
 
-`netbox-sync` can import data from multiple sources and keep NetBox objects in sync with the current state of those sources. It supports dry-run mode, pruning stale objects, and combining multiple configuration files or environment variables.
+## Thanks
+A BIG thank-you goes out to [Raymond Beaudoin](https://github.com/synackray) for creating
+[vcenter-netbox-sync](https://github.com/synackray/vcenter-netbox-sync) which served as source of a lot
+of ideas for this project.
+
+## Principles
+
+> copied from [Raymond Beaudoin](https://github.com/synackray)
+
+The [NetBox documentation](https://netbox.readthedocs.io/en/stable/#serve-as-a-source-of-truth) makes it clear
+the tool is intended to act as a "Source of Truth". The automated import of live network state is
+strongly discouraged. While this is sound logic we've aimed to provide a middle-ground
+solution for those who desire the functionality.
+
+All objects collected from vCenter have a "lifecycle". Upon import, for supported object types,
+they are tagged `NetBox-synced` to note their origin and distinguish them from other objects.
+Using this tagging system also allows for the orphaning of objects which are no longer detected in vCenter.
+This ensures stale objects are removed from NetBox keeping an accurate current state.
 
 ## Requirements
 
@@ -26,31 +46,24 @@ A tool to synchronize inventory data from external sources into a NetBox instanc
 * `pyyaml==6.0.1`
 
 ### Environment
-
-* NetBox 2.9 or newer
-
-#### VMware source
-
-* VMware vCenter 6.0 or newer
-
-#### check_redfish source
-
-* check_redfish 1.2.0 or newer
-
-#### Dell ECS source
-
+* NetBox >= 2.9
+#### Source: VMWare (if used)
+* VMWare vCenter >= 6.0
+#### Source: check_redfish (if used)
+* check_redfish >= 1.2.0
+<<<<<<<<< Temporary merge branch 1
+=========
+#### Source: Dell ECS (if used)
 * Dell ECS Management API access
-* NetBox Custom Objects plugin installed and configured for ECS models
+* NetBox Custom Objects plugin installed and configured with models for namespaces, buckets, users
+>>>>>>>>> Temporary merge branch 2
 
-## Installation
+# Installing
+* here we assume we install in ```/opt```
 
-The following instructions assume a Unix-like environment and installation under `/opt`.
-
-### Red Hat / CentOS
-
-On CentOS 7, install Python 3.6 and pip from EPEL.
-On CentOS 8, install `python3-pip`.
-
+## RedHat based OS
+* on RedHat/CentOS 7 you need to install python3.6 and pip from EPEL first
+* on RedHat/CentOS 8 systems the package name changed to `python3-pip`
 ```shell
 yum install python36-pip
 ```
