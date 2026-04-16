@@ -234,6 +234,7 @@ source:
     password: super-secret
 ```
 
+
 Create resource in your k8s cluster
  ```shell
 kubectl create configmap netbox-sync-config --from-file=settings.yaml
