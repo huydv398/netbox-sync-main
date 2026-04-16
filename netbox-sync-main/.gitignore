@@ -1,0 +1,20 @@
+# Exclude all hidden files
+.*
+
+# Except those related to git
+!.git*
+
+# publi.sh
+!.publi.sh
+
+# python cache
+__pycache__
+
+# log dir
+log/*
+
+# chache files
+cache/*
+
+# settings file
+settings.ini
