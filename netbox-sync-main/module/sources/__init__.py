@@ -10,7 +10,10 @@
 # define all available sources here
 from module.sources.vmware.connection import VMWareHandler
 from module.sources.check_redfish.import_inventory import CheckRedfish
+<<<<<<< HEAD
 from module.sources.dell_ecs.connection import DellECSHandler
+=======
+>>>>>>> cd90f89f571da0de99fe6f23bf81f271dc77fd6b
 
 from module.common.logging import get_logger
 from module.netbox.inventory import NetBoxInventory
@@ -19,7 +22,11 @@ from module.config.base import ConfigOptions
 from module.config import source_config_section_name
 
 # list of valid sources
+<<<<<<< HEAD
 valid_sources = [VMWareHandler, CheckRedfish, DellECSHandler]
+=======
+valid_sources = [VMWareHandler, CheckRedfish]
+>>>>>>> cd90f89f571da0de99fe6f23bf81f271dc77fd6b
 
 
 def validate_source(source_class_object=None, state="pre"):
