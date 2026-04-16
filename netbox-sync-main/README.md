@@ -6,7 +6,10 @@ This is a tool to sync data from different sources to a NetBox instance.
 Available source types:
 * VMware vCenter Server
 * [bb-ricardo/check_redfish](https://github.com/bb-Ricardo/check_redfish) inventory files
+<<<<<<< HEAD
 * Dell ECS (using NetBox Custom Objects plugin)
+=======
+>>>>>>> cd90f89f571da0de99fe6f23bf81f271dc77fd6b
 
 **IMPORTANT: READ INSTRUCTIONS CAREFULLY BEFORE RUNNING THIS PROGRAM**
 
@@ -46,9 +49,12 @@ This ensures stale objects are removed from NetBox keeping an accurate current s
 * VMWare vCenter >= 6.0
 #### Source: check_redfish (if used)
 * check_redfish >= 1.2.0
+<<<<<<< HEAD
 #### Source: Dell ECS (if used)
 * Dell ECS Management API access
 * NetBox Custom Objects plugin installed and configured with models for namespaces, buckets, users
+=======
+>>>>>>> cd90f89f571da0de99fe6f23bf81f271dc77fd6b
 
 # Installing
 * here we assume we install in ```/opt```
@@ -298,7 +304,10 @@ Program will exit if all retries failed!
 Check out the documentations for the different sources
 * [vmware](https://github.com/bb-Ricardo/netbox-sync/blob/main/docs/source_vmware.md)
 * [check_redfish](https://github.com/bb-Ricardo/netbox-sync/blob/main/docs/source_check_redfish.md)
+<<<<<<< HEAD
 * Dell ECS (custom implementation using NetBox Custom Objects plugin)
+=======
+>>>>>>> cd90f89f571da0de99fe6f23bf81f271dc77fd6b
 
 If you have multiple vCenter instances or check_redfish folders just add another source with the same type
 in the **same** file.
@@ -319,6 +328,7 @@ host_fqdn = vcenter2.new-york.example.com
 
 type = check_redfish
 inventory_file_path = /opt/redfish_inventory
+<<<<<<< HEAD
 
 [source/ecs-prod]
 
@@ -329,6 +339,8 @@ port = 4443
 username = ecs-admin
 password = super-secret
 validate_tls_certs = False
+=======
+>>>>>>> cd90f89f571da0de99fe6f23bf81f271dc77fd6b
 ```
 
 If different sources overwrite the same attribute for ex. a host then the order of the sources should be considered.
@@ -354,4 +366,7 @@ by different NetBox objects
 >You can check out the full license [here](https://github.com/bb-Ricardo/netbox-sync/blob/main/LICENSE.txt)
 
 This project is licensed under the terms of the **MIT** license.
+<<<<<<< HEAD
 
+=======
+>>>>>>> cd90f89f571da0de99fe6f23bf81f271dc77fd6b

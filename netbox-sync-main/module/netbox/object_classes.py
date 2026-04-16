@@ -2417,6 +2417,7 @@ class NBPowerPort(NetBoxObject):
 
         super().update(data=data, read_from_netbox=read_from_netbox, source=source)
 
+<<<<<<< HEAD
 # Custom Objects for Dell ECS using NetBox Custom Objects Plugin
 class NBNamespace(NetBoxObject):
     name = "namespace"
@@ -2474,4 +2475,6 @@ class NBUser(NetBoxObject):
         }
         super().__init__(*args, **kwargs)
 
+=======
+>>>>>>> cd90f89f571da0de99fe6f23bf81f271dc77fd6b
 # EOF
